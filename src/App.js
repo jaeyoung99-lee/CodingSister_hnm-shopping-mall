@@ -5,6 +5,7 @@ import ProductAll from "./page/ProductAll";
 import Login from "./page/Login";
 import ProductDetail from "./page/ProductDetail";
 import Navbar from "./component/Navbar";
+import { useState } from "react";
 
 // 1. 전체 상품 페이지, 로그인 페이지, 상품 상세 페이지
 // 1-1. 네비게이션바 만들기
@@ -18,6 +19,7 @@ import Navbar from "./component/Navbar";
 // 9. 상품을 검색할 수 있다
 
 function App() {
+  const [authenticate, setAuthenticate] = useState(false); //로그인 성공 유무
   return (
     <div>
       <Navbar />

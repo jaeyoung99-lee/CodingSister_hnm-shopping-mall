@@ -2,8 +2,13 @@ import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+  const goToLogin = () => {
+    navigate("/login");
+  };
   const menuList = [
     "여성",
     "Divided",
@@ -16,7 +21,7 @@ const Navbar = () => {
   ];
   return (
     <div>
-      <div className="login-button">
+      <div className="login-button" onClick={goToLogin}>
         <FontAwesomeIcon icon={faUser} />
         <div>로그인</div>
       </div>
