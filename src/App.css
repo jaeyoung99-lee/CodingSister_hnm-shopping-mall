@@ -1,6 +1,7 @@
 .login-button {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   margin: 20px;
   cursor: pointer;
 }
@@ -8,6 +9,7 @@
 .logo {
   display: flex;
   justify-content: center;
+  cursor: pointer;
 }
 
 .menu-list {
@@ -32,6 +34,7 @@
   align-items: center;
   right: 20px;
   margin-top: 25px;
+  color: crimson;
 }
 
 .search input {
@@ -40,4 +43,72 @@
   outline: none;
   margin-left: 10px;
   font-size: 16px;
+}
+
+.card {
+  border: none !important;
+  margin-bottom: 10px;
+}
+
+.choice {
+  font-size: 12px;
+  color: rgb(255, 0, 238);
+  font-weight: bold;
+  height: 20px;
+}
+
+.new {
+  font-size: 11px;
+  height: 20px;
+  color: blue;
+  /* 우하단, 좌상단, 우상단, 좌하단 */
+  text-shadow: 1px 1px 2px yellow, -1px -1px 2px yellow, 1px -1px 2px yellow,
+    -1px 1px 2px yellow;
+}
+.card:hover {
+  transform: scale(1.1);
+  z-index: 1;
+}
+
+.product-img {
+  display: flex;
+  justify-content: flex-end;
+  height: 500px;
+}
+
+.dropdown {
+  margin-top: 10px;
+}
+
+.add-button {
+  background-color: red;
+  color: yellow;
+  width: 300px;
+  margin-top: 10px;
+  border: 2px solid pink;
+}
+
+.pre-button {
+  background-color: lightgray;
+  color: rgb(103, 47, 234);
+  width: 300px;
+  margin-top: 10px;
+  border: 2px solid rgb(175, 168, 168);
+}
+
+.blink {
+  animation: blink-animation 0.5s steps(5, start) infinite;
+  -webkit-animation: blink-animation 0.5s steps(5, start) infinite;
+}
+
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
 }

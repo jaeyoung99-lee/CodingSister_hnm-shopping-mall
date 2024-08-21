@@ -9,6 +9,9 @@ const Navbar = () => {
   const goToLogin = () => {
     navigate("/login");
   };
+  const goToHome = () => {
+    navigate("/");
+  };
   const menuList = [
     "여성",
     "Divided",
@@ -23,6 +26,7 @@ const Navbar = () => {
     <div>
       <div className="login-button" onClick={goToLogin}>
         <FontAwesomeIcon icon={faUser} />
+        &nbsp;
         <div>로그인</div>
       </div>
       <div className="logo">
@@ -30,6 +34,7 @@ const Navbar = () => {
           width={100}
           src="https://blog.kakaocdn.net/dn/mPpwY/btrS08qGYmD/HMrVGbYtNNpxynW3i53Zy1/img.png"
           alt="H&M logo"
+          onClick={goToHome}
         />
       </div>
       <div className="menu-area">
