@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from "react";
 import ProductCard from "../component/ProductCard";
 import { Col, Container, Row } from "react-bootstrap";
+import { useSearchParams } from "react-router-dom";
 
 const ProductAll = () => {
   const [productList, setProductList] = useState([]);
+  const [query, setQuery] = useSearchParams();
   const getProducts = async () => {
-    let url = `http://localhost:5000/products`;
+    let searchQuery = query.get("q") || ""; // 쿼리가 없는 경우를 대비해서 빈 값을 넣어줌
+    console.log("쿼리값은?", searchQuery);
+    let url = `http://localhost:5000/products?q=${searchQuery}`;
     let response = await fetch(url);
     let data = await response.json();
     console.log("data :", data);
@@ -13,7 +17,7 @@ const ProductAll = () => {
   };
   useEffect(() => {
     getProducts();
-  }, []);
+  }, [query]);
   return (
     <div>
       <Container>

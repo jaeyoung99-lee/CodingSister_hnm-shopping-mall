@@ -12,6 +12,13 @@ const Navbar = () => {
   const goToHome = () => {
     navigate("/");
   };
+  const search = (event) => {
+    if (event.key === "Enter") {
+      // 입력한 검색어를 읽어와서 url을 바꿔준다
+      let keyword = event.target.value;
+      navigate(`/?q=${keyword}`);
+    }
+  };
   const menuList = [
     "여성",
     "Divided",
@@ -45,7 +52,11 @@ const Navbar = () => {
         </ul>
         <div className="search">
           <FontAwesomeIcon icon={faMagnifyingGlass} />
-          <input type="text" />
+          <input
+            type="text"
+            placeholder="제품 검색"
+            onKeyPress={(event) => search(event)}
+          />
         </div>
       </div>
     </div>
