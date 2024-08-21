@@ -24,7 +24,7 @@ const Navbar = () => {
         <img
           width={100}
           src="https://blog.kakaocdn.net/dn/mPpwY/btrS08qGYmD/HMrVGbYtNNpxynW3i53Zy1/img.png"
-          alt="H&M logo image"
+          alt="H&M logo"
         />
       </div>
       <div className="menu-area">
