@@ -9,7 +9,7 @@ const ProductAll = () => {
   const getProducts = async () => {
     let searchQuery = query.get("q") || ""; // 쿼리가 없는 경우를 대비해서 빈 값을 넣어줌
     console.log("쿼리값은?", searchQuery);
-    let url = `http://localhost:5000/products?q=${searchQuery}`;
+    let url = `https://my-json-server.typicode.com/jaeyoung99-lee/CodingSister_hnm-shopping-mall/products?q=${searchQuery}`;
     let response = await fetch(url);
     let data = await response.json();
     console.log("data :", data);
