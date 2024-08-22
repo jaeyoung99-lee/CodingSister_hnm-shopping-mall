@@ -129,6 +129,7 @@
     background-color: rgb(245, 200, 87);
     padding: 10px 0;
     color: rgb(123, 9, 9);
+    z-index: 1000;
   }
 
   .menu-list.show {
@@ -140,6 +141,7 @@
     position: absolute;
     top: 10px;
     left: 20px;
+    z-index: 1000;
   }
 
   .search {
