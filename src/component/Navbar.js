@@ -1,17 +1,28 @@
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ authenticate, setAuthenticate }) => {
   const navigate = useNavigate();
-  const goToLogin = () => {
-    navigate("/login");
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const Menu = () => {
+    setMenuOpen(!menuOpen);
   };
+
+  const goToLogin = () => {
+    {
+      authenticate === false ? navigate("/login") : navigate("/");
+      setAuthenticate(false);
+    }
+  };
+
   const goToHome = () => {
     navigate("/");
   };
+
   const search = (event) => {
     if (event.key === "Enter") {
       // 입력한 검색어를 읽어와서 url을 바꿔준다
@@ -19,6 +30,7 @@ const Navbar = () => {
       navigate(`/?q=${keyword}`);
     }
   };
+
   const menuList = [
     "여성",
     "Divided",
@@ -29,12 +41,13 @@ const Navbar = () => {
     "Sale",
     "지속가능성",
   ];
+
   return (
     <div>
       <div className="login-button" onClick={goToLogin}>
         <FontAwesomeIcon icon={faUser} />
         &nbsp;
-        <div>로그인</div>
+        <div>{authenticate === false ? "로그인" : "로그아웃"}</div>
       </div>
       <div className="logo">
         <img
@@ -45,7 +58,10 @@ const Navbar = () => {
         />
       </div>
       <div className="menu-area">
-        <ul className="menu-list">
+        <div className="menu-icon" onClick={Menu}>
+          ☰
+        </div>
+        <ul className={`menu-list ${menuOpen === true ? "show" : ""}`}>
           {menuList.map((menu) => (
             <li>{menu}</li>
           ))}

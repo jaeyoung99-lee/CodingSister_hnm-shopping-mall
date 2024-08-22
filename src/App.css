@@ -112,3 +112,38 @@
     visibility: hidden;
   }
 }
+
+.menu-icon {
+  display: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 700px) {
+  .menu-list {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    top: 50px;
+    width: 50%;
+    background-color: rgb(245, 200, 87);
+    padding: 10px 0;
+    color: rgb(123, 9, 9);
+  }
+
+  .menu-list.show {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+  }
+
+  .search {
+    position: relative;
+    margin-top: 10px;
+  }
+}
